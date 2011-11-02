@@ -40,7 +40,7 @@ def setPrinter():
     con = cups.Connection()
     # Finde passende Drucker zum Raum
     allprinters = con.getPrinters()
-    pre = re.compile('^printer%d(-[0-9]+)*_(schwarz|color)$' % raumnr)
+    pre = re.compile('^printer%02(-[0-9]+)*_(schwarz|color)$' % raumnr)
     printers = []
     if debug:
         sys.stdout.write("Gefundene Drucker (%d):\n" % len(allprinters))
@@ -94,3 +94,4 @@ if __name__ == "__main__":
             setPrinter()
     else:
         setPrinter()
+
